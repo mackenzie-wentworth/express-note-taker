@@ -1,5 +1,4 @@
 // TODO: Import file packages
-// const routes = require('express').Router();
 const path = require('path');
 const fs = require('fs');
 
@@ -13,13 +12,13 @@ const dbJsonFile = 'db/db.json';
 module.exports = (app) => {
     // TODO: Create 'GET/api/notes' to read the db.json file and return all saved notes to JSON
     app.get('/api/notes', (req, res) => {
-        console.log(`${req.method} GET request received for new saved note`);
+        console.log(`${req.method} request received for new saved note`);
         res.sendFile(path.join(__dirname, '../db/db.json'));
   });
 
     // TODO: Create 'POST/api/notes' to recieve a new note to save on the request body, add it to the db.json file, and then return the NEW note to the client
     app.post('/api/notes', (req, res) => {
-        console.info(`${req.method} POST request received to submit new saved note`);
+        console.info(`${req.method} request received to submit new saved note`);
         let db = fs.readFileSync(dbJsonFile);
         db = JSON.parse(db);
         res.json(db);
@@ -36,7 +35,3 @@ module.exports = (app) => {
     });
 
 }
-
-
-// Exports 'routes' requests
-// module.exports = routes; 
