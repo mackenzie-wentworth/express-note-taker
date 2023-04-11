@@ -1,19 +1,19 @@
 // TODO: Import file packages
 const routes = require('express').Router();
-const uuid = require('./uuid');
+const uuid = require('uuid');
 const fs = require('fs');
 const util = require('util');
 
 // Import db.json file
-const db = require('./db/db.json');
+const db = require('../db/db.json');
 
 // Promise version of fs.readFile
 const readFromFile = util.promisify(fs.readFile);
 
 // Function to write new note data to JSON file 
-const writeToFile = (db, content) =>
-  fs.writeFile(db, JSON.stringify(content, null, 4), (err) =>
-    err ? console.error(err) : console.info(`\nData written to ${db}`)
+const writeToFile = (destination, content) =>
+  fs.writeFile(destination, JSON.stringify(content, null, 4), (err) =>
+    err ? console.error(err) : console.info(`\nData written to ${destination}`)
   );
 
 // Function to read data from ./db/db.json file and append new note
@@ -30,14 +30,14 @@ const readAndAppend = (content, db) => {
 };
 
 // TODO: Create 'GET/api/notes' to read the db.json file and return all saved notes to JSON
-routes.get('api/notes', (req, res) => {
+routes.get('/api/notes', (req, res) => {
     console.log(`${req.method} GET request received for new saved note`);
   
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
 // TODO: Create 'POST/api/notes' to recieve a new note to save on the request body, add it to the db.json file, and then return the NEW note to the client
-routes.post('api/notes', (req, res) => {
+routes.post('/api/notes', (req, res) => {
     console.info(`${req.method} POST request received to submit new saved note`);
     const { title, text } = req.body;
   
