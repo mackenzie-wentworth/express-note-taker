@@ -1,4 +1,4 @@
-// TODO: Import file packages
+// Import module dependencies
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -14,7 +14,7 @@ app.use(express.static('public'));
 require('./routes/apiRoutes')(app);
 require('./routes/htmlRoutes')(app);
 
-// TODO: Create app listener for PORT
+// App listener for PORT 3001
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT}`)
 );
