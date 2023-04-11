@@ -3,7 +3,7 @@
 ## Application Links
 * GitHub Repository for Application: https://github.com/mackenzie-wentworth/express-note-taker
 
-* Heroku Deployed Application:
+* Heroku Deployed Application: https://note-taker-expressjs-1.herokuapp.com/
 
 ---
 
