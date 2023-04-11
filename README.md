@@ -1,16 +1,17 @@
 # Express Note Taker
 
 ## Application Links
-* GitHub Repository for Application: 
+* GitHub Repository for Application: https://github.com/mackenzie-wentworth/express-note-taker
 
 * Heroku Deployed Application:
 
+---
 
 ## Description
 For this week's Challenge, I was tasked to build the back end of a note-taking application using `Express.js` so that it connects to the front end of a given starter code to save and retrieve note data from a JSON file.
 
-## User Story
 
+## User Story
 ```
 AS A small business owner
 I WANT to be able to write and save notes
@@ -40,7 +41,7 @@ The following images demonstrate the appearance and functionality of the Express
 * [uuid](https://www.npmjs.com/package/uuid)
 * [Express](https://expressjs.com/)
 
-
+---
 
 ## Questions?
 If you have any questions, please see my contact information below to reach me for inquiries:
