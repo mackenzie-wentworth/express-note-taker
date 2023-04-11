@@ -17,11 +17,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // Routing for api and html
-const apiRouter = require('./routes/apiRoutes');
-const htmlRouter = require('./routes/htmlRoutes');
+require('./routes/apiRoutes')(app);
+require('./routes/htmlRoutes')(app);
+// const apiRouter = require('./routes/apiRoutes');
+// const htmlRouter = require('./routes/htmlRoutes');
 
-app.use('/api/apiRoutes', apiRouter);
-app.use('/html/htmlRoutes', htmlRouter);
+// app.use('/api/apiRoutes', apiRouter);
+// app.use('/html/htmlRoutes', htmlRouter);
 
 // GET reads from the db.json file and returns all saved notes.
 // app.get('/', (req, res) =>

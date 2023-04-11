@@ -1,8 +1,10 @@
 // TODO: Import file packages
 // const routes = require('express').Router();
-const uuid = require('uuid');
 const path = require('path');
 const fs = require('fs');
+
+// Imports npm package for random UUID
+const { v4: uuidv4 } = require('uuid');
 
 // db.json file variable
 const dbJsonFile = 'db/db.json';
@@ -25,7 +27,7 @@ module.exports = (app) => {
         title: req.body.title,
         text: req.body.text,
         // TIP: Find a way to give each note a UNIQUE ID when it's saved (use UUID package)
-        note_id: uuid(),
+        note_id: uuidv4(),
         };
         // This writes the new note to the db.json file
         db.push(newNote);
