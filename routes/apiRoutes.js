@@ -37,13 +37,17 @@ module.exports = (app) => {
         res.json(db);
     });
 
-    // DELETE route deletes the note by specific note_id from db.json file
+    // DELETE route deletes the note by specific 'note_id' from db.json file
     app.delete('/api/notes/:id', (req, res) => {
+        // First, read all notes from db.json file
         let db = JSON.parse(fs.readFileSync(dbJsonFile))
+    
+        // Next, DELETE request with query parameter containing id of a note to delete
         let deleteNote = db.filter(item => item.note_id !== req.params.note_id);
 
-        fs.writeFileSync(dbJsonFile, JSON.stringify(deleteNotes));
+        // Then, rewrite the notes to db.json file (once deleted note has been removed)
+        fs.writeFileSync(dbJsonFile, JSON.stringify(deleteNote));
         res.json(deleteNote);
     })
 
-}
+};
