@@ -1,6 +1,1 @@
-[
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
-]
+[{"title":"Test Title","text":"Test text","note_id":" "},{"title":"Groceries List","text":"Bread\nEggs\nMilk\nChicken\nFruit","note_id":"90e24f0d-7a74-4969-bdb3-e24f606416a8"},{"title":"Return Packages","text":"Target\nSephora","note_id":"2edf9b00-13a2-44ab-aba9-6bb02b974ef0"},{"title":"Jenny's Wifi","text":"network: personal-145\npassword: 56789","note_id":"c211ec62-3dc6-4994-b121-9dda3e04552c"},{"title":"August Reminders","text":"Start applying for jobs\nDeclutter house\nCar oil change\nGet hair done","note_id":"b746aed5-4db2-4e3d-b7e2-002b2398c815"}]
