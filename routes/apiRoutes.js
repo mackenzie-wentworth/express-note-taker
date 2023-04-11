@@ -37,8 +37,32 @@ routes.get('api/notes', (req, res) => {
 });
 
 // TODO: Create 'POST/api/notes' to recieve a new note to save on the request body, add it to the db.json file, and then return the NEW note to the client
-// TIP: Find a way to give each note a UNIQUE ID when it's saved (use UUID package)
-
+routes.post('api/notes', (req, res) => {
+    console.info(`${req.method} POST request received to submit new saved note`);
+    const { title, text } = req.body;
+  
+    // If all the required properties of a new note are present
+    if (title && text) {
+      // Variable to define the properties of the new saved note
+      const newNote = {
+        title: req.body.title,
+        text: req.body.text,
+        // TIP: Find a way to give each note a UNIQUE ID when it's saved (use UUID package)
+        note_id: uuid(),
+      };
+  
+      readAndAppend(newNote, './db/db.json');
+  
+      const response = {
+        status: 'success',
+        body: newNote,
+      };
+  
+      res.json(response);
+    } else {
+      res.json('Error in posting new saved note');
+    }
+});
 
 // Exports 'routes' requests
 module.exports = routes; 
