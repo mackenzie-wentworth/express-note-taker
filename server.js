@@ -23,5 +23,5 @@ app.use('/html/htmlRoutes', htmlRouter);
 
 // TODO: Create app listener for PORT
 app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT} 🚀`)
+  console.log(`App listening at http://localhost:${PORT}`)
 );

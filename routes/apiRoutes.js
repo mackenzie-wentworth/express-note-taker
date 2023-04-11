@@ -10,6 +10,25 @@ const db = require('./db/db.json');
 // Promise version of fs.readFile
 const readFromFile = util.promisify(fs.readFile);
 
+// Function to write new note data to JSON file 
+const writeToFile = (db, content) =>
+  fs.writeFile(db, JSON.stringify(content, null, 4), (err) =>
+    err ? console.error(err) : console.info(`\nData written to ${db}`)
+  );
+
+// Function to read data from ./db/db.json file and append new note
+const readAndAppend = (content, db) => {
+  fs.readFile(db, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      const parsedData = JSON.parse(data);
+      parsedData.push(content);
+      writeToFile(db, parsedData);
+    }
+  });
+};
+
 // TODO: Create 'GET/api/notes' to read the db.json file and return all saved notes to JSON
 routes.get('api/notes', (req, res) => {
     console.log(`${req.method} GET request received for new saved note`);
