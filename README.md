@@ -20,13 +20,18 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
 
 ## Usage
-The *Express Note Taker* serves as a tool for users to write and save notes all in one application. 
+The **Express Note Taker** serves as a tool for users to write and save notes all in one application. 
 
+### *How to Use the Express Note Taker:*
 The following images demonstrate the appearance and functionality of the Express Note Taker web application:
 
 ![An image of the homepage for the Express Note Taker application.](./assets/images/homepage-note_taker.png)
 
+After clicking on "Get Started" from the homepage, users will be taken to a page that displays all previously saved notes in the menu on the left-side of the page.
+
 ![An image of all saved notes in the left-side menu on the Express Note Taker application.](./assets/images/saved-notes.png)
+
+To create and save a **new note**, users can edit the 'Note Title' and 'Note Text' fields. Once the user has added text to both fields, then a `save icon` will appear in the top-right corner of the page to click and save their new note. 
 
 ![An image to show how to add a new note to the Express Note Taker application.](./assets/images/new-note.png)
 
